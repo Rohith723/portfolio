@@ -1,1 +1,28 @@
-<p>skills works!</p>
+<section class="py-24 bg-surface-container-lowest/50" id="skills">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-6">
+
+    <div class="text-center mb-16">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-4 shimmer-text">Technical Arsenal</h2>
+      <p class="text-on-surface-variant">Core technical stack and foundational skills for building modern applications.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (category of categories; track category.title) {
+        <div class="glass-card p-8 rounded-xl group">
+          <div class="w-12 h-12 {{ category.accentClasses }} rounded-lg flex items-center justify-center mb-6 transition-colors">
+            <span class="material-symbols-outlined">{{ category.icon }}</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md mb-6">{{ category.title }}</h3>
+          <div class="flex flex-wrap gap-2">
+            @for (tag of category.tags; track tag) {
+              <span class="px-3 py-1 bg-surface-variant rounded-full text-label-mono border border-outline-variant/50">
+                {{ tag }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
