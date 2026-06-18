@@ -1,1 +1,38 @@
-<p>about works!</p>
+<section class="py-24 max-w-[1200px] mx-auto px-5 md:px-6" id="about">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+
+    <div class="glass-card p-10 md:p-16 rounded-xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[100px]"></div>
+      <h2 class="font-headline-lg text-headline-lg mb-8 shimmer-text">Beyond the Code</h2>
+      <div class="space-y-6 font-body-lg text-on-surface-variant">
+        <p>
+          I am a <span class="text-secondary font-semibold">2025 B.Tech CSE (Data Science) Graduate</span> and an
+          aspiring Full Stack .NET Developer. I am a <span class="text-secondary font-semibold">fast learner</span>
+          with a passion for solving complex architectural puzzles through clean, maintainable code.
+        </p>
+        <p>
+          With a focus on <span class="text-tertiary font-semibold">Foundational Clean Code &amp; SOLID Principles</span>,
+          I am building a strong bridge between robust backend services and intuitive frontend interfaces.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-4">
+          @for (principle of principles; track principle) {
+            <div class="px-4 py-2 bg-surface-container rounded-lg border border-outline-variant/30 text-label-mono">
+              {{ principle }}
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-8">
+      @for (highlight of highlights; track highlight.title) {
+        <div class="glass-card p-8 rounded-xl border-l-4 {{ highlight.accentClass }}">
+          <span class="material-symbols-outlined {{ highlight.iconClass }} mb-4 text-4xl">{{ highlight.icon }}</span>
+          <h3 class="font-headline-md text-headline-md mb-2">{{ highlight.title }}</h3>
+          <p class="text-on-surface-variant">{{ highlight.description }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
